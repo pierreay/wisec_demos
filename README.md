@@ -174,6 +174,8 @@ OpenBTS> sendsms 2*************7 0033666*****1 Hey you
 
 If you add two phones, they can send each other messages.
 
+TODO: fix, as of know asterisk and calls are not working.
+
 Once you are done, close all the programs.
 
 Then, halt the virtual machine.
