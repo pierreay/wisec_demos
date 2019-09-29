@@ -145,7 +145,7 @@ You can assing any phone number, e.g., 1111
 In a new terminal:
 ```
 > cd ~/dev/NodeManager/
-> ./nmcli.py sipauthserve subscribers create "TestPhone1" 2*************7 1111
+> ./nmcli.py sipauthserve subscribers create "TestPhone1" IMSI2*************7 1111
 ```
 
 It is also possible to allow open registration for a certain IMSI
@@ -154,6 +154,11 @@ OpenBTS> config Control.LUR.OpenRegistration 2*************7
 ```
 
 Now your phone should connect.
+
+You can send an SMS to the phone, from any number you want.
+```
+OpenBTS> sendsms 2*************7 0033666*****1 Hey you
+```
 
 Once you are done, close all the programs.
 
