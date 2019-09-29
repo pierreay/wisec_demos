@@ -8,11 +8,20 @@ Welcome to the git repo for the WiSec class at EURECOM.
 
 ## <a name="RogueGSM"></a>Rogue GSM base station
 
+***Warning***
+This is a purely technical guide.
+Refer to the regulations in your country to check what you are allowed and not allowed to do.
+
 We will use OpenBTS and a USRP B210 software defined radio to build a rogue GSM base station.
 [Getting Started with OpenBTS Range Networks](http://www.openbts.org/site/wp-content/uploads/ebook/Getting_Started_with_OpenBTS_Range_Networks.pdf)
 is a good reference.
 
 We use Vagrant and VirtualBox to setup a virtual machine. This makes it easy to setup the environment and it is independent from the operating system you have. Please make sure you have installed Vagrant and VirtualBox before continuing. Refer to the official documentation and tutorials.
+
+You will also need some test phones for the experiments.
+Beware that you will collect the IMEI and IMSI of these phones.
+The idea for the demo is to catch the IMEI and IMSI of the testphones, and whitesit them, so that
+no other user will accidentally connect to the test network.
 
 Connect the USRP B210 to you machine, then prepare the virtual machine, the first time this will take several minutes.
 ```
@@ -107,6 +116,20 @@ Now, start each of the following programs in a separate terminal.
 > sudo ./OpenBTSCLI
 ```
 
+Now, you can type commands in the OpenBTSCLI command line interface (OpenBTS>).
+
+Adjust the receive gain.
+2dB is a good value when the phone are close, to avoid clipping.
+Incerease to 10dB if you the phone is more distant.
+```
+OpenBTS> rxgain 2
+```
+
+Set the transmission attenuation, e.g. 20dB.
+Adjust to your needs.
+```
+OpenBTS> power 20
+```
 
 Once you are done, halt your virtual machine.
 ```
