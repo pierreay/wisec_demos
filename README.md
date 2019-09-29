@@ -131,6 +131,15 @@ Adjust to your needs.
 OpenBTS> power 20
 ```
 
+Setup a spoofed network identity.
+You can find MCC and MNC here https://cellidfinder.com/mcc-mnc/
+We chose an Italian operator that is not available in France.
+```
+config GSM.Identity.ShortName WIND
+config GSM.Identity.MCC 222
+config GSM.Identity.MNC 88 
+```
+
 Now, take a testphone and do a manual scan for the networks.
 You should see a new carrier appear.
 Try to connect to the network, you will get a failure, but this is enough to catch the IMSI/IMEI information.
