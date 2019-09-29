@@ -134,6 +134,9 @@ OpenBTS> power 20
 Setup a spoofed network identity.
 You can find MCC and MNC here https://cellidfinder.com/mcc-mnc/
 We chose an Italian operator that is not available in France.
+With a French SIM, you have to select it manually.
+With an Italian WIND SIM, it will be chosen automatically.
+If you want to use an operator that exist in the area, then you have to overpower its signal, we chose not to.
 ```
 config GSM.Identity.ShortName WIND
 config GSM.Identity.MCC 222
