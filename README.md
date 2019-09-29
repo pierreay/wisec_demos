@@ -75,6 +75,38 @@ Kill with Ctrl-C.
 Shutting down transceiver...
 ```
 
+From now on it will be handy to have multiple terminals.
+A good way to accomplish that via ssh is to use the ```tmux``` program.
+Quick tutorial:
+1. ```tmux``` to start a new session.
+2. ```Ctrl-b c``` to create a new terminal.
+3. ```Ctrl-b n``` to move to next terminal.
+4. ```Ctrl-b p``` to move to previous terminal.
+4. ```Ctrl-b d``` to detach from the session.
+5. ```tmux a``` to reattach.
+
+Now, start each of the following programs in a separate terminal.
+```
+> cd ~/dev/subscriberRegistry/apps
+> sudo ./sipauthserve
+```
+```
+> cd ~/dev/smqueue/smqueue/
+> sudo ./smqueue
+```
+```
+> cd ~/dev/asterisk/asterisk-11.7.0/main
+> sudo LD_LIBRARY_PATH=./ ./asterisk -vv
+```
+cd ~/dev/openbts/debian/openbts/OpenBTS/
+sudo ./OpenBTS
+```
+```
+cd ~/dev/openbts/debian/openbts/OpenBTS/
+sudo ./OpenBTSCLI
+```
+
+
 Once you are done, halt your virtual machine.
 ```
 $ vagrant halt
