@@ -131,7 +131,33 @@ Adjust to your needs.
 OpenBTS> power 20
 ```
 
-Once you are done, halt your virtual machine.
+Now, take a testphone and do a manual scan for the networks.
+You should see a new carrier appear.
+Try to connect to the network, you will get a failure, but this is enough to catch the IMSI/IMEI information.
+```
+OpenBTS> tmsis
+IMSI            TMSI IMEI            AUTH CREATED ACCESSED TMSI_ASSIGNED
+2*************7 -    3*************0 0    3s      3s       0             
+```
+
+It is now possible to add a new subscriber for this phone.
+You can assing any phone number, e.g., 1111
+In a new terminal:
+```
+> cd ~/dev/NodeManager/
+> ./nmcli.py sipauthserve subscribers create "TestPhone1" 2*************7 1111
+```
+
+It is also possible to allow open registration for a certain IMSI
+```
+OpenBTS> config Control.LUR.OpenRegistration 2*************7
+```
+
+Now your phone should connect.
+
+Once you are done, close all the programs.
+
+Then, halt the virtual machine.
 ```
 $ vagrant halt
 ```
