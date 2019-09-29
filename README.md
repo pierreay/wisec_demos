@@ -98,12 +98,13 @@ Now, start each of the following programs in a separate terminal.
 > cd ~/dev/asterisk/asterisk-11.7.0/main
 > sudo LD_LIBRARY_PATH=./ ./asterisk -vv
 ```
-cd ~/dev/openbts/debian/openbts/OpenBTS/
-sudo ./OpenBTS
+```
+> cd ~/dev/openbts/debian/openbts/OpenBTS/
+> sudo ./OpenBTS
 ```
 ```
-cd ~/dev/openbts/debian/openbts/OpenBTS/
-sudo ./OpenBTSCLI
+> cd ~/dev/openbts/debian/openbts/OpenBTS/
+> sudo ./OpenBTSCLI
 ```
 
 
