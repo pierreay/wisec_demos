@@ -187,12 +187,26 @@ $ vagrant halt
 ## <a name="tools"></a>VM with tools
 
 We provide a virtual machine with all the tools necessary for the demos.
-Only the rogue GSM base station has a separate VM.
+Only the rogue GSM base station has a separate VM, because it is easy to compile with that version.
+If you prefer, you can install the tools one by one on your machine, you can have a look at bootstrap.sh
 
 ```
 cd tools
 vagrant up
 ```
+
+The first time wait for the provisioning to complete (in the same shell where you typed vagrant up).
+A new window appears, go there and login.
+
+Login: vagrant
+Password: vagrant
+
+Start the graphic interface.
+```
+> startx
+```
+
+When you are done, close the machine.
 
 ```
 vagrant halt
