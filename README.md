@@ -6,6 +6,7 @@ Welcome to the git repo for the WiSec class at EURECOM.
 
 * [Rogue GSM base station](#RogueGSM)
 * [VM with tools](#tools)
+* [GQRX and RTL-SDR](#gqrx)
 
 ## <a name="RogueGSM"></a>Rogue GSM base station
 
@@ -212,4 +213,18 @@ When you are done, close the machine.
 vagrant halt
 ```
 
+## <a name="gqrx"></a>GQRX and RTL-SDR
 
+Make sure you are using the VM with tools or you have installed gqrx-sdr on your machine.
+
+Connect the RTL-SDR dongle and check that is was recognized.
+```
+> lsusb 
+Bus 001 Device 002: ID 8087:8000 Intel Corp. 
+Bus 002 Device 068: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T
+```
+
+Start gqrx. Chose Realtek RTL2838UHIDIR. Play with theradio, try to listen to AM and FM stations in your area.
+```
+> gqrx
+```
