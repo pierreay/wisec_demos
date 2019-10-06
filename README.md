@@ -5,6 +5,7 @@ Welcome to the git repo for the WiSec class at EURECOM.
 # Index
 
 * [Rogue GSM base station](#RogueGSM)
+* [VM with tools](#tools)
 
 ## <a name="RogueGSM"></a>Rogue GSM base station
 
@@ -183,6 +184,18 @@ Then, halt the virtual machine.
 $ vagrant halt
 ```
 
+## <a name="tools"></a>VM with tools
 
+We provide a virtual machine with all the tools necessary for the demos.
+Only the rogue GSM base station has a separate VM.
+
+```
+cd tools
+vagrant up
+```
+
+```
+vagrant halt
+```
 
 
