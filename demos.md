@@ -19,6 +19,10 @@ simple
 7. Replay: using URH, record a command from the clicker and send it later to 
    move the slides. Extra: when Aurélien shows the microphone it is also
    possible to record that and replay the audio.
+8. Soft-TEMPEST: just search "tempest for elize" on youtube, use an RTL-SDR
+   to pick the leak, demodulate and play the sound.
+   Ofc you could also use noise-sdr for the leak, but the video
+   is maybe easier and simpler to show.
 
 ## Ideas:
 
