@@ -16,6 +16,9 @@ simple
 5. Relay: Aurélien has the cable
 6. Then maybe some fingerprinting of wifi scans from phones and laptops,
    but it was not great 
+7. Replay: using URH, record a command from the clicker and send it later to 
+   move the slides. Extra: when Aurélien shows the microphone it is also
+   possible to record that and replay the audio.
 
 ## Ideas:
 
