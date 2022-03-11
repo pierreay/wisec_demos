@@ -36,3 +36,5 @@ cd /home/vagrant
 
 # TODO (why??)
 mkdir -p /var/lib/asterisk/sqlite3dir
+# smqueue try to write logs in this directory, it has to be manually created.
+sudo mkdir -p /var/lib/OpenBTS
