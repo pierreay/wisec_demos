@@ -1,37 +1,43 @@
 * Demos
 
-** PROG GPS: Spoofing
+** PROG GSM: Rogue Base Station with OpenBTS
+
+- Hardware :
+  - Ettus USRP B210
+- Software :
+  - Debian / Ubuntu
+  - OpenBTS
+
+Demo using OpenBTS and a USRP B210 SDR to build a rogue GSM base station.
+
+** NEXT GPS: Spoofing
 
 Seems to be an experiment from Giovanni in the R2Lab's anechoic chamber.
 
-** PROG RF: Fingerprinting
+** NEXT RF: Fingerprinting
 
 The original was this one : https://www.rtl-sdr.com/fingerprinting-electronic-devices-via-their-rf-emissions-with-an-rtl-sdr-and-imagemagick/
 Maybe you can find something better, this is nice because it is extremely simple.
 
-** PROG RF: TempestSDR
+** NEXT RF: TempestSDR
 
 The original was this one : https://www.rtl-sdr.com/tempestsdr-a-sdr-tool-for-eavesdropping-on-computer-screens-via-unintentionally-radiated-rf/
 It is a bit annoying to use but it works.
 Alternatively, there is =gr-tempest= in GNURadio but I never really tried it.
 It seems that Giovanni also tried : https://github.com/martinmarinov/TempestSDR
 
-** PROG RF: Soft-TEMPEST
+** NEXT RF: Soft-TEMPEST
 
 Just search "TEMPEST For Elize" on YouTube, use an RTL-SDR to pick the leak, demodulate and play the sound.
 Of course you could also use Noise-SDR for the leak, but the video is maybe easier and simpler to show.
 
-** PROG RF: Relay
+** NEXT RF: Relay
 
 Aurélien has the cable.
 
-** PROG RF: Replay
+** NEXT RF: Replay
 
 Using URH, record a command from the clicker and send it later to move the slides.
-
-** PROG GSM: OpenBTS
-
-There is some VM, scripts and docs for it in this repo, but there is also a lot online.
 
 ** TODO ZigBee: TODO
 
