@@ -1,2 +1,5 @@
 # Very large files:
 **/mbedtls_1m_home.tar.bz2
+# Emacs files:
+.dir-locals.el
+Makefile.emacs
