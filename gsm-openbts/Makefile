@@ -9,11 +9,13 @@ endef
 help:
 	$(info make help)
 	$(info make host-install)
+	$(info make host-android-enable-wifi)
+	$(info make host-android-share-screen)
 	$(info make guest-install)
 	$(info make guest-install-reset)
 
-# Installation for the host OS
-# =============================
+# Targets for the host OS
+# =======================
 
 host-install:
 	sudo apt-get install virtualbox virtualbox-dkms virtualbox-ext-pack virtualbox-guest-additions-iso virtualbox-qt
@@ -30,8 +32,8 @@ host-android-enable-wifi:
 host-android-share-screen:
 	scrcpy --tcpip=$(ANDROID_IP)
 
-# Installation for the guest VM
-# =============================
+# Targets for the guest VM
+# ========================
 
 INSTALL_DIR="$${HOME}/openbts-install"
 
