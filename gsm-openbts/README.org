@@ -63,32 +63,27 @@ sudo ./transceiver
 
 * Mounting the rogue base station
 
-Now, start each of the following programs in a separate terminal:
+Now, inside the guest, issue each of the following command in a separate
+terminal (use =tmux=):
 
 #+begin_src bash
-cd ~/dev/subscriberRegistry/apps
-sudo ./sipauthserve
+cd ~/openbts-demo && make guest-launch-sipauth
 #+end_src
 
 #+begin_src bash
-cd ~/dev/smqueue/smqueue/
-sudo ./smqueue
+cd ~/openbts-demo && make guest-launch-smqueue
 #+end_src
 
 #+begin_src bash
-cd ~/dev/asterisk/asterisk-11.7.0/main
-sudo LD_LIBRARY_PATH=./ ./asterisk -vv
+cd ~/openbts-demo && make guest-launch-asterisk
 #+end_src
 
 #+begin_src bash
-cd ~/dev/openbts/debian/openbts/OpenBTS/
-sudo ./OpenBTS
+cd ~/openbts-demo && make guest-launch-openbts
 #+end_src
 
 #+begin_src bash
-cd ~/dev/openbts/debian/openbts/OpenBTS/
-sudo ./OpenBTSCLI
-
+cd ~/openbts-demo && make guest-launch-openbtscli
 #+end_src
 
 Now, you can type commands in the OpenBTSCLI command line interface (=OpenBTS>=).

@@ -13,6 +13,11 @@ help:
 	$(info make host-android-share-screen)
 	$(info make guest-install)
 	$(info make guest-install-reset)
+	$(info make guest-launch-sipauth)
+	$(info make guest-launch-smqueue)
+	$(info make guest-launch-asterisk)
+	$(info make guest-launch-openbts)
+	$(info make guest-launch-openbtscli)
 
 # Targets for the host OS
 # =======================
@@ -82,3 +87,23 @@ guest-install: .sentinel/install-apt .sentinel/install-openbts .sentinel/build-o
 
 guest-install-reset:
 	rm -rf .sentinel
+
+guest-launch-sipauth:
+	$(call myinfo, Start SIP Authorization Server \(SIPAuthServe\, which processes SIP REGISTER requests\):)
+	cd $(INSTALL_DIR)/dev/subscriberRegistry/apps && sudo ./sipauthserve
+
+guest-launch-smqueue:
+	$(call myinfo, Start SIP MESSAGE Queue \(SMQueue\, which processes SIP MESSAGE requests\):)
+	cd $(INSTALL_DIR)/dev/smqueue/smqueue && sudo ./smqueue
+
+guest-launch-asterisk:
+	$(call myinfo, Start Asterisk \(VoIP switch responsible for handling SIP INVITE requests\):)
+	cd $(INSTALL_DIR)/dev/asterisk/asterisk-11.7.0/main && sudo LD_LIBRARY_PATH=./ ./asterisk -vv
+
+guest-launch-openbts:
+	$(call myinfo, Start OpenBTS \(implements the GSM air interface in software\):)
+	cd $(INSTALL_DIR)/dev/openbts/debian/openbts/OpenBTS && sudo ./OpenBTS
+
+guest-launch-openbtscli:
+	$(call myinfo, Start OpenBTS command-line interface:)
+	cd $(INSTALL_DIR)/dev/openbts/debian/openbts/OpenBTS && sudo ./OpenBTSCLI
