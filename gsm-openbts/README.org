@@ -1,3 +1,35 @@
+* Requirements
+
+- Ettus USRP B200mini/B210
+- GHz Antenna
+- 5 GB free
+
+* Installation
+
+OpenBTS official scripts assume to be installed on a Ubuntu 16.04 "Xenial"
+system. Hence, a virtual machine is the better way to use it. We use Vagrant to
+manage and provision the virtual machine.
+
+First, install the needed tooling (VirtualBox and Vagrant) on the host
+computer:
+
+#+begin_src bash
+make host-install
+#+end_src
+
+Reboot the machine that user group changes take effect.
+
+Then, issue the following command that will install the guest operating system
+and the needed tolling on it:
+
+#+begin_src bash
+vagrant up
+#+end_src
+
+This will create the virtual machine according to the =Vagrantfile= and provision
+the guest operating system by calling the =guest-install= Makefile's target. The
+operation took between 30 minutes and 1 hour.
+
 * Rogue GSM Base Station
 
 We will use OpenBTS and a USRP B210 software defined radio to build a rogue GSM
