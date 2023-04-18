@@ -21,6 +21,15 @@ host-install:
 	sudo usermod -aG vboxusers $$USER
 	$(call myinfo, Reboot the system and make sure $$USER is in the vboxusers group.)
 
+ANDROID_IP=192.168.1.7
+
+host-android-enable-wifi:
+	$(call myinfo, Enable ADB over TCP/IP from USB debugging:)
+	scrcpy --tcpip
+
+host-android-share-screen:
+	scrcpy --tcpip=$(ANDROID_IP)
+
 # Installation for the guest VM
 # =============================
 
