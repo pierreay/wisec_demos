@@ -86,39 +86,41 @@ cd ~/openbts-demo && make guest-launch-openbts
 cd ~/openbts-demo && make guest-launch-openbtscli
 #+end_src
 
-Now, you can type commands in the OpenBTSCLI command line interface (=OpenBTS>=).
+Now, you can type commands in the OpenBTSCLI command line interface
+(=OpenBTS>=). We assume that the following commands will be typed inside this
+prompt.
 
 Adjust the receive gain, 2dB is a good value when the phone are close, to avoid
-clipping. Incerease to 10dB if you the phone is more distant:
+clipping. Increase to 10dB if you the phone is more distant:
 
 #+begin_src :eval never
-OpenBTS> rxgain 2
+rxgain 2
 #+end_src
 
 Set the transmission attenuation, e.g. 20dB (adjust to your needs):
 
 #+begin_src :eval never
-OpenBTS> power 20
+power 20
 #+end_src
 
 Setup a spoofed network identity. You can find MCC and MNC on
 [[https://cellidfinder.com/mcc-mnc/][CellIDFinder.com]]. We chose an Italian operator that is not available in
-France. With a French SIM, you have to select it manually.  With an Italian
-WIND SIM, it will be chosen automatically. If you want to use an operator that
-exist in the area, then you have to overpower its signal, we chose not to.
+France. With a French SIM, you have to select it manually. With an Italian WIND
+SIM, it will be chosen automatically. If you want to use an operator that exist
+in the area, then you have to overpower its signal, we chose not to.
 
 #+begin_src :eval never
 config GSM.Identity.ShortName WIND
 config GSM.Identity.MCC 222
-config GSM.Identity.MNC 88 
+config GSM.Identity.MNC 88
 #+end_src
 
-Now, take a testphone and do a manual scan for the networks. You should see a
+Now, take a test phone and do a manual scan for the networks. You should see a
 new carrier appear. Try to connect to the network, you will get a failure, but
-this is enough to catch the IMSI/IMEI information.
+this is enough to catch the IMSI/IMEI information. Look at IMSI collected:
 
 #+begin_src :eval never
-OpenBTS> tmsis
+tmsis
 #+end_src
 
 #+begin_example
@@ -126,87 +128,38 @@ IMSI            TMSI IMEI            AUTH CREATED ACCESSED TMSI_ASSIGNED
 2*************7 -    3*************0 0    3s      3s       0             
 #+end_example
 
-It is now possible to add a new subscriber for this phone. You can assing any
-phone number, e.g., 1111. In a new terminal:
-
-#+begin_src bash
-cd ~/dev/NodeManager/
-./nmcli.py sipauthserve subscribers create "TestPhone1" IMSI2*************7 1111
-#+end_src
-
-It is also possible to allow open registration for a certain IMSI:
+We can authorize this specific test phone, a mobile station (MS), to register by its IMSI:
 
 #+begin_src :eval never
-OpenBTS> config Control.LUR.OpenRegistration 2*************7
+config Control.LUR.OpenRegistration 2*************7
 #+end_src
 
-Now your phone should connect. You can send an SMS to the phone, from any
-number you want.
+Or authorize all MS to register with the following regular expression:
 
 #+begin_src :eval never
-OpenBTS> sendsms 2*************7 0033666*****1 Hey you
+config Control.LUR.OpenRegistration .*
 #+end_src
 
-TODO: fix, as of know asterisk and calls are not working.
+Now your phone could connect. You can send an SMS to the phone, from any number
+you want.
+
+#+begin_src :eval never
+sendsms 2*************7 0610102020 "Hey, you!"
+#+end_src
+
+At the end of the demonstration, reset the configuration:
+
+#+begin_src :eval never
+rmconfig GSM.Identity.ShortName
+rmconfig GSM.Identity.MCC
+rmconfig GSM.Identity.MNC
+rmconfig Control.LUR.OpenRegistration
+rmconfig Control.SMSCB.Table
+#+end_src
 
 If you add two phones, they can send each other messages. Once you are done,
 close all the programs. Then, halt the virtual machine.
 
 #+begin_src bash
 vagrant halt
-#+end_src
-
-* VM with tools
-
-We provide a virtual machine with all the tools necessary for the demos. Only
-the rogue GSM base station has a separate VM, because it is easy to compile
-with that version. If you prefer, you can install the tools one by one on your
-machine, you can have a look at =bootstrap.sh=.
-
-#+begin_src bash
-cd tools
-vagrant up
-#+end_src
-
-The first time wait for the provisioning to complete (in the same shell where
-you typed vagrant up). A new window appears, go there and login:
-
-#+begin_example
-Login: vagrant
-Password: vagrant
-#+end_example
-
-Start the graphic interface:
-
-#+begin_src bash
-startx
-#+end_src
-
-When you are done, close the machine:
-
-#+begin_src bash
-vagrant halt
-#+end_src
-
-* GQRX and RTL-SDR
-
-Make sure you are using the VM with tools or you have installed =gqrx-sdr= on
-your machine.
-
-Connect the RTL-SDR dongle and check that is was recognized:
-
-#+begin_src bash
-lsusb 
-#+end_src
-
-#+begin_example
-Bus 001 Device 002: ID 8087:8000 Intel Corp. 
-Bus 002 Device 068: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T
-#+end_example
-
-Start GQRX, choose =Realtek RTL2838UHIDIR=. Play with the radio, try to listen to
-AM and FM stations in your area.
-
-#+begin_src bash
-gqrx
 #+end_src
