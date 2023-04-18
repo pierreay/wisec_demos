@@ -1,8 +1,17 @@
+* Introduction
+
+We will use OpenBTS and a USRP B210 software defined radio to build a rogue GSM
+base station, allowing to send fake SMS, intercept SMS between users, and spoof
+the phone provider's identity.
+
 * Requirements
 
 - Ettus USRP B200mini/B210
 - GHz Antenna
 - 5 GB free
+- Some test phones for the experiments. We will catch the IMEI and IMSI of the
+  test phones, and whitest them, so that no other user will accidentally
+  connect to the test network.
 
 * Installation
 
@@ -30,30 +39,10 @@ This will create the virtual machine according to the =Vagrantfile= and provisio
 the guest operating system by calling the =guest-install= Makefile's target. The
 operation took between 30 minutes and 1 hour.
 
-* Rogue GSM Base Station
+* Testing the setup
 
-We will use OpenBTS and a USRP B210 software defined radio to build a rogue GSM
-base station. The book [[http://www.openbts.org/site/wp-content/uploads/ebook/Getting_Started_with_OpenBTS_Range_Networks.pdf][Getting Started with OpenBTS Range Networks]] is a good
-reference.
-
-We use Vagrant and VirtualBox to setup a virtual machine. This makes it easy to
-setup the environment and it is independent from the operating system you
-have. Please make sure you have installed Vagrant and VirtualBox before
-continuing. Refer to the official documentation and tutorials.
-
-You will also need some test phones for the experiments. The idea for the demo
-is to catch the IMEI and IMSI of the testphones, and whitesit them, so that no
-other user will accidentally connect to the test network.
-
-Connect the USRP B210 to your machine, then prepare the virtual machine, the
-first time this will take several minutes:
-
-#+begin_src bash
-cd openbts
-vagrant up
-#+end_src
-
-You can not connect to the virtual machine:
+Make sure the USRP B210 is connected to your machine, then connect to the
+virtual machine.
 
 #+begin_src bash
 vagrant ssh
@@ -62,15 +51,17 @@ vagrant ssh
 First, check that radio is detected:
 
 #+begin_src bash
-uhd_find_devices
+sudo uhd_find_devices
 #+end_src
 
 And that the radio is able to transmit:
 
 #+begin_src bash
-cd ~/dev/openbts/debian/openbts/OpenBTS/
+cd ~/openbts-install/dev/openbts/debian/openbts/OpenBTS/
 sudo ./transceiver
 #+end_src
+
+* Mounting the rogue base station
 
 Now, start each of the following programs in a separate terminal:
 
