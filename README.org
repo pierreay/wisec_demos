@@ -45,10 +45,6 @@ It seems that Giovanni also tried : https://github.com/martinmarinov/TempestSDR
 Just search "TEMPEST For Elize" on YouTube, use an RTL-SDR to pick the leak, demodulate and play the sound.
 Of course you could also use Noise-SDR for the leak, but the video is maybe easier and simpler to show.
 
-** DONE RF: Relay on Car Key
-
-Aurélien will perform this demo to open his own car.
-
 ** NEXT RF: Replay
 
 1. Using URH, record a command from the clicker and send it later to move the
@@ -59,10 +55,6 @@ Aurélien will perform this demo to open his own car.
    relay.
 
 ** TODO RFID: Card Cloning
-
 ** TODO ZigBee: TODO
-
 ** TODO BLE: Reactive Jamming
-
 ** TODO BLE: Packet Injection
-
