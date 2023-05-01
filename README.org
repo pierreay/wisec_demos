@@ -1,5 +1,11 @@
 * Demos
 
+** DONE RF - Clicker
+
+Perform a replay attack on a unprotected clicker.
+
+- Directory: [[file:rf-clicker/]]
+
 ** DONE RF - Etherify
 
 Exfiltrate a secret in Morse Code through an covert-channel based on Ethernet link mode.
@@ -9,6 +15,7 @@ Exfiltrate a secret in Morse Code through an covert-channel based on Ethernet li
      computers connected with an Ethernet cable to each others.
   2. One SDR (from RTL-SDR to USRP).
   3. GQRX and sudo permissions.
+- Directory: [[file:rf-etherify/]]
 
 ** PROG GSM: Rogue Base Station with OpenBTS
 SCHEDULED: <2023-04-19 mer.>

@@ -1,0 +1,38 @@
+* About
+
+Demo about performing a replay attack on a clicker.
+
+It is a [[https://www.amazon.com/Kensington-Wireless-Presenter-Receiver-Presentation/dp/B087JDNZ49][Kensington Wireless Presenter]] composed of a remote controller and a USB
+dongle. The operation frequency is printed on the USB dongle.
+
+The old dongles doesn't have any protections, however, recent dongles are
+described as protected by an AES-128 bits.
+
+* Observe the signal
+
+1. Launch [[shell:gqrx -r &]] and connect to a USRP B200-mini.
+2. Tune at 2.407 GHz with 5 MSPS and a PGA gain to 60 db.
+3. Click on a button of the remote controller: you should see a wideband signal
+   (1 MHz bandwidth signal) on the waterfall (and your selected slider on GQRX
+   could move).
+
+Note: you could do this with URH instead of QGRX directly with =File= ->
+=Spectrum Analyzer=.
+
+* Replay attack
+
+1. [[shell:urh &]].
+2. =File= -> =Record signal=.
+3. Record the signal according to parameters:
+   [[file:imgs/urh_recording.png]]
+4. Save the signal.
+5. Under =Interpretation= tab, click on the arrow =Replay signal=.
+6. Enter the same parameters as recording:
+   - Device :: USRP
+   - Antenna :: Antenna 1
+   - Frequency (Hz) :: 2,407G
+   - Sample rate (Sps) :: 2.0M
+   - Bandwidth (Hz) :: 2.0M
+   - Gain :: 70
+   - Repeat :: 1
+7. Press =Start= button and put slides as active window. Happy replay!
