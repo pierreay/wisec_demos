@@ -1,5 +1,13 @@
 * Demos
 
+** DONE RF - Etherify
+
+Exfiltrate a secret in Morse Code through an covert-channel based on Ethernet link mode.
+
+- Prerequisites :
+  1. One or two computers connected in Ethernet to an internet box or each others.
+  2. One SDR (from RTL-SDR to USRP).
+  3. GQRX and sudo permissions.
 ** PROG GSM: Rogue Base Station with OpenBTS
 SCHEDULED: <2023-04-19 mer.>
 
