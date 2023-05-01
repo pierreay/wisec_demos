@@ -28,10 +28,6 @@ SCHEDULED: <2023-04-19 mer.>
 
 Demo using OpenBTS and a USRP B210 SDR to build a rogue GSM base station.
 
-** NEXT GPS: Spoofing
-
-Seems to be an experiment from Giovanni in the R2Lab's anechoic chamber.
-
 ** NEXT RF: Fingerprinting
 
 The original was this one : https://www.rtl-sdr.com/fingerprinting-electronic-devices-via-their-rf-emissions-with-an-rtl-sdr-and-imagemagick/
