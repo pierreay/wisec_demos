@@ -1,0 +1,50 @@
+#+STARTUP: beamer
+#+TITLE: Etherify
+#+SUBTITLE: Leak data from an air-gapped computer
+#+AUTHOR: Pierre AYOUB
+#+DATE: May 01, 2023
+#+OPTIONS: H:1 toc:nil
+#+BEAMER_THEME: CambridgeUS
+#+BEAMER_FONT_THEME: serif
+
+* Source
+
+- Jacek Lipkowski, SQ5BPF, 2020
+- https://github.com/sq5bpf/etherify
+
+* Goal
+
+# https://blog.k7computing.com/wp-content/uploads/2020/10/Air_Gap_01_updated.jpg
+#+CAPTION: Illustration of an air-gapped network
+[[file:imgs/air_gapped.jpg]]
+
+* Leak source
+
+** Ethernet cable
+
+#+ATTR_BEAMER: :overlay <+->
+- 4 twisted pair lines
+- Carries conducted RF signals from 1 to 1000 MHz range
+- Imperfections leads to radiated EM signals
+
+* Leak control
+
+** Software
+
+- src_bash[:exports code :eval never]{ethtool} allows to change Ethernet mode.
+
+* Encoding
+
+Ethernet modes:
+#+ATTR_BEAMER: :overlay <+->
+- 10BASE-T :: Manchester Encoding, 10 MHz symbol rate
+
+  -> Space signal (logical 0).
+
+- 100BASE-T :: 4B5B Encoding & NRZI, 125 MHz symbol rate
+
+  -> Mark signal (logical 1).
+
+#+ATTR_BEAMER: :overlay <+->
+- We can turn Ethernet modes to Morse code!
+- No packets -> send an idle sequence -> we receive a constant signal!

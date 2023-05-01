@@ -4,6 +4,7 @@ help:
 	$(info test-leak-off)
 	$(info transmit-secret)
 	$(info receive-secret)
+	$(info clean)
 
 display-morse:
 	cat secret.txt
@@ -24,3 +25,6 @@ receive-secret:
 	$(info Tune center frequency around 125 Mhz)
 	$(info Use 200 KS of sample rate and 200 kH of bandwidth)
 	$(info Use CW-U mode)
+
+clean:
+	rm -rf _minted-slides slides.tex

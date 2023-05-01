@@ -5,9 +5,11 @@
 Exfiltrate a secret in Morse Code through an covert-channel based on Ethernet link mode.
 
 - Prerequisites :
-  1. One or two computers connected in Ethernet to an internet box or each others.
+  1. One computer connected with an Ethernet cable to an internet box OR two
+     computers connected with an Ethernet cable to each others.
   2. One SDR (from RTL-SDR to USRP).
   3. GQRX and sudo permissions.
+
 ** PROG GSM: Rogue Base Station with OpenBTS
 SCHEDULED: <2023-04-19 mer.>
 
