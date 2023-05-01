@@ -19,6 +19,9 @@ Exfiltrate a secret in Morse Code through an covert-channel based on Ethernet li
 
 ** PROG GSM: Rogue Base Station with OpenBTS
 SCHEDULED: <2023-04-19 mer.>
+:PROPERTIES:
+:ID:       c8d7e164-a86e-4971-bb06-7d68f0c48b24
+:END:
 
 - Hardware :
   - Ettus USRP B210
