@@ -93,16 +93,13 @@ Now, you can type commands in the OpenBTSCLI command line interface
 (=OpenBTS>=). We assume that the following commands will be typed inside this
 prompt.
 
-Adjust the receive gain, 2dB is a good value when the phone are close, to avoid
-clipping. Increase to 10dB if you the phone is more distant:
+A phone and a base station are meant to be far from each others. Hence, it is
+important to put the phone at 50 cm away from the BS minimum, and to adjust the
+receive gain, 2dB is a good value when the phone is close, to avoid
+clipping. Also set the transmission attenuation, e.g. 20dB:
 
 #+begin_src :eval never
 rxgain 2
-#+end_src
-
-Set the transmission attenuation, e.g. 20dB (adjust to your needs):
-
-#+begin_src :eval never
 power 20
 #+end_src
 
@@ -120,8 +117,9 @@ config GSM.Identity.MNC 88
 #+end_src
 
 Now, take a test phone and do a manual scan for the networks. You should see a
-new carrier appear. Try to connect to the network, you will get a failure, but
-this is enough to catch the IMSI/IMEI information. Look at IMSI collected:
+new carrier appear. Try to connect to the network (disabling mobile data and
+switching plane mode could help), you will get a failure, but this is enough to
+catch the IMSI/IMEI information. Look at IMSI collected:
 
 #+begin_src :eval never
 tmsis
@@ -158,7 +156,6 @@ rmconfig GSM.Identity.ShortName
 rmconfig GSM.Identity.MCC
 rmconfig GSM.Identity.MNC
 rmconfig Control.LUR.OpenRegistration
-rmconfig Control.SMSCB.Table
 #+end_src
 
 If you add two phones, they can send each other messages. Once you are done,
@@ -193,6 +190,5 @@ rmconfig GSM.Identity.ShortName
 rmconfig GSM.Identity.MCC
 rmconfig GSM.Identity.MNC
 rmconfig Control.LUR.OpenRegistration
-rmconfig Control.SMSCB.Table
 #+end_example
 
