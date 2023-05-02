@@ -1,7 +1,0 @@
-# Optional. Use only if we want to try to send emergency message (SMSCB). Set
-# the SMSCB path to an already initialized database. Row insertion can be done
-# like this:
-# $ sqlite3 /vagrant/db/SMSCB.db
-# sqlite3> INSERT INTO SMSCB VALUES (0, 0, 0, 0, 0, "My Emergency Message", 0, 0);
-config Control.SMSCB.Table "/vagrant/db/SMSCB.db"
-restart # Restart to take SMSCB database into account.

@@ -82,6 +82,9 @@ cd ~/openbts-demo && make guest-launch-asterisk
 cd ~/openbts-demo && make guest-launch-openbts
 #+end_src
 
+Now, you should see a red LED on for the TX/RX antenna and a green LED on for
+the RX2 antenna of the USRP.
+
 #+begin_src bash
 cd ~/openbts-demo && make guest-launch-openbtscli
 #+end_src
@@ -103,11 +106,12 @@ Set the transmission attenuation, e.g. 20dB (adjust to your needs):
 power 20
 #+end_src
 
-Setup a spoofed network identity. You can find MCC and MNC on
-[[https://cellidfinder.com/mcc-mnc/][CellIDFinder.com]]. We chose an Italian operator that is not available in
-France. With a French SIM, you have to select it manually. With an Italian WIND
-SIM, it will be chosen automatically. If you want to use an operator that exist
-in the area, then you have to overpower its signal, we chose not to.
+Setup a spoofed network identity. You can find MCC and MNC looking at
+[[file:html/CellIFDinder.com - MCC MNC List.html]]. We chose an Italian operator
+that is not available in France. With a French SIM, you have to select it
+manually. With an Italian WIND SIM, it will be chosen automatically. If you
+want to use an operator that exist in the area, then you have to overpower its
+signal, we chose not to.
 
 #+begin_src :eval never
 config GSM.Identity.ShortName WIND
@@ -163,3 +167,32 @@ close all the programs. Then, halt the virtual machine.
 #+begin_src bash
 vagrant halt
 #+end_src
+
+* Cheatsheet
+
+#+begin_example
+IMSI of OnePlus 3T: 208017706545823
+Number of one contact of mine: 0698803022
+
+Series of command for OpenBTSCLI:
+
+rxgain 2
+power 20
+
+config GSM.Identity.ShortName WIND
+config GSM.Identity.MCC 222
+config GSM.Identity.MNC 88
+
+tmsis
+config Control.LUR.OpenRegistration 208017706545823
+OR
+config Control.LUR.OpenRegistration .*
+sendsms 208017706545823 0698803022 "Hey, you!"
+
+rmconfig GSM.Identity.ShortName
+rmconfig GSM.Identity.MCC
+rmconfig GSM.Identity.MNC
+rmconfig Control.LUR.OpenRegistration
+rmconfig Control.SMSCB.Table
+#+end_example
+
