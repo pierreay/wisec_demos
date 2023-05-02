@@ -1,14 +1,14 @@
 * Demos
 
-** DONE RF - Clicker
+** DONE RF, Replay - Clicker
 
 Perform a replay attack on a unprotected clicker.
 
 - Directory: [[file:rf-clicker/]]
 
-** DONE RF - Etherify
+** DONE RF, Soft-TEMPEST - Etherify
 
-Exfiltrate a secret in Morse Code through an covert-channel based on Ethernet link mode.
+Exfiltrate a secret in Morse Code through a Soft-Tempest covert-channel based on Ethernet link mode.
 
 - Prerequisites :
   1. One computer connected with an Ethernet cable to an internet box OR two
@@ -17,7 +17,7 @@ Exfiltrate a secret in Morse Code through an covert-channel based on Ethernet li
   3. GQRX and sudo permissions.
 - Directory: [[file:rf-etherify/]]
 
-** DONE GSM: Rogue Base Station with OpenBTS
+** DONE GSM, Spoofing - OpenBTS
 
 - Hardware :
   - Ettus USRP B210
@@ -39,21 +39,4 @@ It is a bit annoying to use but it works.
 Alternatively, there is =gr-tempest= in GNURadio but I never really tried it.
 It seems that Giovanni also tried : https://github.com/martinmarinov/TempestSDR
 
-** NEXT RF: Soft-TEMPEST
-
-Just search "TEMPEST For Elize" on YouTube, use an RTL-SDR to pick the leak, demodulate and play the sound.
-Of course you could also use Noise-SDR for the leak, but the video is maybe easier and simpler to show.
-
-** NEXT RF: Replay
-
-1. Using URH, record a command from the clicker and send it later to move the
-   slides :
-   - https://www.amazon.fr/gp/product/B000FPGP4U/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&th=1
-2. Using URH, record a command from a connected electrical relay and send it
-   later to turn it ON, with a light, a beeper, or an alarm connected to the
-   relay.
-
 ** TODO RFID: Card Cloning
-** TODO ZigBee: TODO
-** TODO BLE: Reactive Jamming
-** TODO BLE: Packet Injection
