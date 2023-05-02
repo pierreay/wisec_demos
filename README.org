@@ -17,19 +17,15 @@ Exfiltrate a secret in Morse Code through an covert-channel based on Ethernet li
   3. GQRX and sudo permissions.
 - Directory: [[file:rf-etherify/]]
 
-** PROG GSM: Rogue Base Station with OpenBTS
-SCHEDULED: <2023-04-19 mer.>
-:PROPERTIES:
-:ID:       c8d7e164-a86e-4971-bb06-7d68f0c48b24
-:END:
+** DONE GSM: Rogue Base Station with OpenBTS
 
 - Hardware :
   - Ettus USRP B210
 - Software :
-  - Debian / Ubuntu
+  - Ubuntu 16.04
   - OpenBTS
 
-Demo using OpenBTS and a USRP B210 SDR to build a rogue GSM base station.
+Demo using OpenBTS and a USRP B210 or B200mini SDR to build a rogue GSM base station.
 
 ** NEXT RF: Fingerprinting
 
