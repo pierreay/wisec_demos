@@ -2,8 +2,9 @@
 
 Demo about performing a replay attack on a clicker.
 
-It is a [[https://www.amazon.com/Kensington-Wireless-Presenter-Receiver-Presentation/dp/B087JDNZ49][Kensington Wireless Presenter]] composed of a remote controller and a USB
-dongle. The operation frequency is printed on the USB dongle.
+It is a Kensington Wireless Presenter ([[https://www.amazon.fr/gp/product/B000FPGP4U/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&th=1][old version without AES]]) ([[https://www.amazon.com/Kensington-Wireless-Presenter-Receiver-Presentation/dp/B087JDNZ49][new version
+with AES]]) composed of a remote controller and a USB dongle. The operation
+frequency is printed on the USB dongle.
 
 The old dongles doesn't have any protections, however, recent dongles are
 described as protected by an AES-128 bits.
