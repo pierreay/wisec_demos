@@ -38,3 +38,7 @@ The original was this one : https://www.rtl-sdr.com/tempestsdr-a-sdr-tool-for-ea
 It is a bit annoying to use but it works.
 Alternatively, there is =gr-tempest= in GNURadio but I never really tried it.
 It seems that Giovanni also tried : https://github.com/martinmarinov/TempestSDR
+
+** PROG Wi-Fi: WEP
+
+** PROG Wi-Fi: WPA
