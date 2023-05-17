@@ -9,6 +9,7 @@ STA_MAC=C0:EE:FB:F8:6D:F2
 ATK_INTERFACE=wlxb8eca3d9d777
 
 create_wep_network:
+	nmcli device set $(AP_INTERFACE) managed no
 	sudo airbase-ng -w $(AP_PWD) -c $(AP_CH) --essid $(AP_SSID) $(AP_INTERFACE)
 
 enable_monitor_mode:
