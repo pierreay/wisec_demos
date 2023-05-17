@@ -42,3 +42,5 @@ It seems that Giovanni also tried : https://github.com/martinmarinov/TempestSDR
 ** PROG Wi-Fi: WEP
 
 ** PROG Wi-Fi: WPA
+
+** PROG Wi-Fi: Evil-Twin
