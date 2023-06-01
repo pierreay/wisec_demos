@@ -27,11 +27,6 @@ Exfiltrate a secret in Morse Code through a Soft-Tempest covert-channel based on
 
 Demo using OpenBTS and a USRP B210 or B200mini SDR to build a rogue GSM base station.
 
-** NEXT RF: Fingerprinting
-
-The original was this one : https://www.rtl-sdr.com/fingerprinting-electronic-devices-via-their-rf-emissions-with-an-rtl-sdr-and-imagemagick/
-Maybe you can find something better, this is nice because it is extremely simple.
-
 ** DONE Wi-Fi: WEP
 
 In this demo, you will generate traffic (using ARP replay) on a WEP-protected
@@ -66,3 +61,9 @@ List of the setup:
   - Victim STA-compatible interface (here, Wi-Fi card of a Lenovo Thinkpad T460 laptop).
 
 ** PROG Wi-Fi: Evil-Twin
+
+** NEXT RF: Fingerprinting
+
+The original was this one : https://www.rtl-sdr.com/fingerprinting-electronic-devices-via-their-rf-emissions-with-an-rtl-sdr-and-imagemagick/
+Maybe you can find something better, this is nice because it is extremely simple.
+
