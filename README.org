@@ -39,8 +39,37 @@ It is a bit annoying to use but it works.
 Alternatively, there is =gr-tempest= in GNURadio but I never really tried it.
 It seems that Giovanni also tried : https://github.com/martinmarinov/TempestSDR
 
-** PROG Wi-Fi: WEP
+** DONE Wi-Fi: WEP
 
-** PROG Wi-Fi: WPA
+In this demo, you will generate traffic (using ARP replay) on a WEP-protected
+Wi-Fi network in order to capture IVs and perform an offline cracking of the
+WEP key. Every steps are programmed in a [[file:wifi-wep/Makefile][=Makefile=]].
+
+List of the setup:
+- Software:
+  - =aircrack-ng=
+  - =NetworkManager=
+- Hardware:
+  - Attacker aircrack-compatible Wi-Fi dongle (here, [[https://www.zyxel.com/fr/fr/products/wifi-extender/dual-band-wireless-ac1200-usb-adapter-nwd6605][ZyXEL NWD6605]] ([[https://www.amazon.fr/Zyxel-AC1200-Adaptateur-Wi-Fi-NWD6605/dp/B00D9EZSO2][Amazon]]) with the [[https://github.com/aircrack-ng/rtl8812au][rtl8812au]] driver).
+  - Victim AP-compatible interface (here, Wi-Fi card of a Lenovo Thinkpad T460 laptop).
+
+** DONE Wi-Fi: WPA
+
+In this demo, you will setup a WPA2 protected network with a victim
+authenticated to it. As an attacker, you will start listening to the traffic to
+capture a 4-way handshake while sending deauthentication request to the
+victim. Hence, you will be able to perform an offline dictionary attack on the
+4-way handshake to retrieve the WPA 2 key.
+
+Every steps are programmed in a [[file:wifi-wpa/Makefile][=Makefile=]].
+
+List of the setup:
+- Software:
+  - =aircrack-ng=
+  - =NetworkManager=
+- Hardware:
+  - Attacker aircrack-compatible Wi-Fi dongle (here, [[https://www.zyxel.com/fr/fr/products/wifi-extender/dual-band-wireless-ac1200-usb-adapter-nwd6605][ZyXEL NWD6605]] ([[https://www.amazon.fr/Zyxel-AC1200-Adaptateur-Wi-Fi-NWD6605/dp/B00D9EZSO2][Amazon]]) with the [[https://github.com/aircrack-ng/rtl8812au][rtl8812au]] driver).
+  - Victim AP-compatible interface (here, a COTS ASUS Wi-Fi access point).
+  - Victim STA-compatible interface (here, Wi-Fi card of a Lenovo Thinkpad T460 laptop).
 
 ** PROG Wi-Fi: Evil-Twin
