@@ -1,7 +1,0 @@
-,1.png 
-,2.png 
-,heatmap.py 
-,log.html 
-,probe.csv 
-,radioprint.sh 
-,Vera.ttf 

@@ -71,8 +71,3 @@ make it more reliable. Once it will be done, it would be great to setup the
 transparent forwarding of the victim data to the internet, to make the evil
 twin stealth (currently, the victim will loose connection to the internet).
 
-** NEXT RF: Fingerprinting
-
-The original was this one : https://www.rtl-sdr.com/fingerprinting-electronic-devices-via-their-rf-emissions-with-an-rtl-sdr-and-imagemagick/
-Maybe you can find something better, this is nice because it is extremely simple.
-
