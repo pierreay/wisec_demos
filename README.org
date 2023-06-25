@@ -60,7 +60,16 @@ List of the setup:
   - Victim AP-compatible interface (here, a COTS ASUS Wi-Fi access point).
   - Victim STA-compatible interface (here, Wi-Fi card of a Lenovo Thinkpad T460 laptop).
 
-** PROG Wi-Fi: Evil-Twin
+** DONE Wi-Fi: Evil-Twin
+
+Setup a fake Wi-Fi network with the same name as a legitimate Wi-Fi network,
+creating an evil twin. The goal is to make the victim client connect to the
+evil twin instead of the legitimate Wi-Fi AP.
+
+This demo succeed once, but failed another. Some parameters could be tuned to
+make it more reliable. Once it will be done, it would be great to setup the
+transparent forwarding of the victim data to the internet, to make the evil
+twin stealth (currently, the victim will loose connection to the internet).
 
 ** NEXT RF: Fingerprinting
 
